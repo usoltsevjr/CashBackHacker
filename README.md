@@ -24,39 +24,41 @@ public class CashbackHackService {
 
 В сервисе точно есть ошибка, поэтому один из ваших авто-тестов должен падать.
 
-### Часть 1. TestNG
+### Часть 2. JUnit4
 
 #### Описание
 
-TestNG сравнительно неплохо [документирован](https://testng.org/doc/documentation-main.html).
+JUnit4 (по сравнению с JUnit5) практически не документирован, поэтому всё, что нам доступно - это [JavaDoc](https://junit.org/junit4/javadoc/latest/index.html)'и и [FAQ](https://junit.org/junit4/faq.html).
 
 На этом уровне, **с точки зрения пользователя**, почти всё*, что поменяется - мы подключим другую библиотеку и будем использовать аннотации из неё и assert'ы.
 
-[Ключевые аннотации](https://testng.org/doc/documentation-main.html#annotations) (вы можете прочитать JavaDoc'и на них).
+Ключевые аннотации (вы можете прочитать JavaDoc'и на них):
+![](pic/junit4-annotations.png) 
 
-[Ключевые Assert'ы](https://testng.org/doc/documentation-main.html#success-failure) (вы можете прочитать JavaDoc'и на них).
+Ключевые Assert'ы (вы можете прочитать JavaDoc'и на них):
+![](pic/junit4-asserts.png) 
+
 
 #### Что нужно сделать
 
-Сделайте ветку testng, в которой:
+Сделайте ветку junit4, в которой:
 
-1\. Добавьте в зависимости TestNG:
+1\. Добавьте в зависимости JUnit:
 ```groovy
 dependencies {
-    testImplementation 'org.testng:testng:7.1.0'
-
+    testImplementation 'junit:junit:4.13'
 }
 
 test {
-    useTestNG()
+    useJUnit()
 }
 ```
 
-2\. Напишите простые автотесты (без параметризации) на основании материала следующего раздела.
+2\. Напишите простые автотесты (без параметризации)
 
 #### Особенности
 
 На этом уровне для нас поменяется всего три вещи:
-1. Аннотация `@Test` должна имеет Fully Qualified Name `org.testng.annotations.Test`
-2. Assert'ы расположены в классе `org.testng.Assert` (**обратите внимание**: в TestNG принято `actual, expected` вместо `expected, actual`)
+1. Аннотация `@Test` должна имеет Fully Qualified Name `org.junit.Test`
+2. Assert'ы расположены в классе `org.junit.Assert`
 3. Класс и тестовые методы должны иметь модификатор доступа `public` (именно поэтому мы вам рекомендовали прописывать модификаторы в тестовых классах) 
