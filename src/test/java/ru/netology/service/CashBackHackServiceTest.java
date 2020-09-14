@@ -6,7 +6,7 @@ import static org.testng.Assert.assertEquals;
 public class CashBackHackServiceTest {
 
     @org.testng.annotations.Test
-    public void ShouldReturn1000() {
+    public void shouldReturn1000() {
     CashBackHackService service = new CashBackHackService();
 
     int amount = 0;
@@ -20,7 +20,7 @@ public class CashBackHackServiceTest {
 
     @org.testng.annotations.Test
 
-    public void ShouldReturn900() {
+    public void shouldReturn900() {
         CashBackHackService service = new CashBackHackService();
 
         int amount = 100;
@@ -33,7 +33,7 @@ public class CashBackHackServiceTest {
     }
 
     @org.testng.annotations.Test
-    public void ShouldReturnZero() {
+    public void shouldReturnZero() {
         CashBackHackService service = new CashBackHackService();
 
         int amount = 1000;
@@ -46,7 +46,7 @@ public class CashBackHackServiceTest {
     }
 
     @org.testng.annotations.Test
-    public void ShouldReturn700() {
+    public void shouldReturn700() {
         CashBackHackService service = new CashBackHackService();
 
         int amount = 1300;
